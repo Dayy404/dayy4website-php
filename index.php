@@ -1,0 +1,103 @@
+<?php
+include_once("dayy/koneksi.php");
+include_once("dayy/dayy_fungsi.php");
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayy404 | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!--TAILWIND CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <!-- Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body class="bodyy">
+    <!--NAVBAR-->
+<nav class="navbar navbar-expand-lg bg-light text-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><?php echo ambil_judul('29')?></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <i class="bars text-primary fa-solid fa-bars"></i>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" text-dark aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.php">Gallery</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/category/downloads/index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Downloads
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/category/downloads/android/index.html">Apps Android</a></li>
+            <li><a class="dropdown-item" href="/category/downloads/windows/index.html">Apps Windows</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://saweria.co/Dayy404" target="_blank">Donate</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!--BANNER-->
+<section class="banner-area bannernya">
+    <div class="banner-img" style="background-image: url(<?php echo ambil_gambar('29')?>);">
+  </div>
+    <h3>| HOME |</h3>
+    <h1><?php echo ambil_ucapan('29')?><span>:v</span></h1><button class="banner-btn btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  More Info
+</button>
+
+<div class="offcanvas offcanvas-start text-dark" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasExampleLabel">Dayy4website</h5>
+<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body">
+<div class="position-relative">
+</div>
+<div>
+  <?php echo ambil_moreinfo('29')?>
+</div>
+<div class="dropdown mt-3">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+    Contact Me
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href=" https://wa.me/6288225433933?text=Hai" target="_blank">WhatsApp</a></li>                  <!--WA-->
+    <li><a class="dropdown-item" href="https://instagram.com/dayy4public" target="_blank">Instagram</a></li>      <!--IG-->
+    <li><a class="dropdown-item" href="#">Discord</a></li>                                          <!--V3-->
+  </ul>
+</div>
+</div>
+</div>
+
+</section>
+<!--Akhir Banner-->
+
+
+<script type="text/javascript" src="script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
