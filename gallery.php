@@ -1,5 +1,7 @@
 <?php
+
 include_once("dayy/koneksi.php");
+
 include_once("dayy/dayy_fungsi.php");
 ?>
 <!DOCTYPE html>
@@ -61,54 +63,41 @@ include_once("dayy/dayy_fungsi.php");
   </nav>
     
   <!--FOTO-->
-  <section class="text-light body-font">
-    <div class="container px-5 py-24 mx-auto flex flex-wrap">
-      <div class="lg:w-2/3 mx-auto">
-        <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
-          <img alt="gallery" class="w-full object-cover h-full object-center block opacity-100 absolute inset-0" src="https://h.top4top.io/p_24976xeal0.jpg">
-          <div class="text-center relative z-10 w-full">
-            <h2 class="text-2xl text-light font-medium title-font mb-2">Nanda_Yoh</h2>
-            <p class="leading-relaxed">:v</p>
-            <a class="mt-3 text-indigo-500 inline-eboard +1 mustache fixie paleo lumbersexualflex items-center">Learn More
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="flex flex-wrap -mx-2">
-          <div class="px-2 w-1/2">
-            <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-              <img alt="gallery" class="w-full object-cover h-full object-center block opacity-100 absolute inset-0" src="https://h.top4top.io/p_24976xeal0.jpg">
-              <div class="text-center relative z-10 w-full">
-                <h2 class="text-xl text-light font-medium title-font mb-2">Nanda_Yoh</h2>
-                <p class="leading-relaxed">:v</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="px-2 w-1/2">
-            <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-              <img alt="gallery" class="w-full object-cover h-full object-center block opacity-100 absolute inset-0" src="https://h.top4top.io/p_24976xeal0.jpg">
-              <div class="text-center relative z-10 w-full">
-                <h2 class="text-xl text-light font-medium title-font mb-2">Nanda_Yoh</h2>
-                <p class="leading-relaxed">:v</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
+  <section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    
+    <div class="flex flex-wrap w-full mb-20">
+
+      <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Welcome To My Gallery</h1>
+        <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+      </div>
+      <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. At deserunt, quia vero quibusdam voluptatum obcaecati?</p>
+    </div>
+    
+    <div class="flex flex-wrap -m-4">
+      <?php
+       $sql1 = "select * from gallery order by id desc";
+
+       $q1   = mysqli_query($koneksi,$sql1);
+       while ($r1 = mysqli_fetch_array($q1)){
+         ?>
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a class="block relative h-48 rounded overflow-hidden">
+          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="<?php echo url_dasar()."/gambar/".gallery_foto($r1['id'])?>">
+        </a>
+        <div class="mt-4">
+          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+          <h2 class="text-gray-900 title-font text-lg font-medium"><?php echo $r1['nama']?></h2>
+          <p class="mt-1"><?php echo $r1['isi']?></p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+  </div>
+  </div>
+</section>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
      
